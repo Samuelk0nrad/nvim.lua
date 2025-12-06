@@ -22,6 +22,7 @@ require("lazy").setup({
     -- **** Web **** --
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
 
     -- **** C# / dotnet **** --
     { import = "lazyvim.plugins.extras.lang.dotnet" },
