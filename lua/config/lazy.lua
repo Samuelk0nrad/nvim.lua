@@ -24,7 +24,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
 
     -- **** C# / dotnet **** --
-    { import = "lazyvim.plugins.extras.lang.omnisharp" },
+    { import = "lazyvim.plugins.extras.lang.dotnet" },
 
     -- **** C++ **** --
     { import = "lazyvim.plugins.extras.lang.clangd" },
