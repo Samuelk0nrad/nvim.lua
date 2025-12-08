@@ -4,9 +4,12 @@ vim.keymap.set("n", "<leader>cc", function()
   vim.cmd("!" .. "g++ -std=c++17 -Wall " .. file .. " -o " .. output .. " && echo 'Compiled to " .. output .. "'")
 end, { desc = "Compile C++ file with g++" })
 
-vim.keymap.set("n", "<leader>rc", function()
+vim.keymap.set("n", "<leader>r", function()
+  local file = vim.fn.expand("%:p")
   local output = vim.fn.expand("%:r") .. ".out"
-  vim.cmd("!" .. output)
+  vim.cmd("!" .. "g++ -std=c++17 -Wall " .. file .. " -o " .. output .. " && echo 'Compiled to " .. output .. "'")
+
+  vim.cmd("terminal " .. output)
 end, { desc = "Run compiled C++ program" })
 
 vim.keymap.set("n", "<leader>cd", function()
