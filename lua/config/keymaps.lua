@@ -24,18 +24,18 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- **** C++ **** --
 vim.keymap.set("n", "<leader>cc", function()
   local file = vim.fn.expand("%:p")
-  local output = vim.fn.expand("%:r")
+  local output = vim.fn.expand("%:r") .. ".out"
   vim.cmd("!" .. "g++ -std=c++17 -Wall " .. file .. " -o " .. output .. " && echo 'Compiled to " .. output .. "'")
 end, { desc = "Compile C++ file with g++" })
 
 vim.keymap.set("n", "<leader>cr", function()
-  local output = vim.fn.expand("%:r")
+  local output = vim.fn.expand("%:r") .. ".out"
   vim.cmd("!" .. output)
 end, { desc = "Run compiled C++ program" })
 
 vim.keymap.set("n", "<leader>cd", function()
   local file = vim.fn.expand("%:p")
-  local output = vim.fn.expand("%:r")
+  local output = vim.fn.expand("%:r") + ".out"
   vim.cmd(
     "!"
       .. "g++ -std=c++17 -g -Wall "
@@ -50,7 +50,7 @@ end, { desc = "Compile C++ file with debug symbols" })
 
 vim.keymap.set("n", "<leader>dd", function()
   local file = vim.fn.expand("%:p")
-  local output = vim.fn.expand("%:r")
+  local output = vim.fn.expand("%:r") .. ".out"
   vim.cmd(
     "!"
       .. "g++ -std=c++17 -g -Wall "
