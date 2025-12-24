@@ -30,6 +30,8 @@ require("lazy").setup({
     -- **** C++ **** --
     { import = "lazyvim.plugins.extras.lang.clangd" },
 
+    { import = "lazyvim.plugins.extras.lang.go" },
+
     -- **** Debugger **** --
     { import = "lazyvim.plugins.extras.dap.core" },
 
