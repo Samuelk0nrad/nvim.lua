@@ -35,6 +35,9 @@ require("lazy").setup({
     -- **** Debugger **** --
     { import = "lazyvim.plugins.extras.dap.core" },
 
+    -- **** Copilot  **** --
+    { import = "lazyvim.plugins.extras.ai.copilot" },
+
     -- import/override with your plugins
     { import = "plugins" },
   },
