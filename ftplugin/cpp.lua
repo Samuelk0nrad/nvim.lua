@@ -1,13 +1,17 @@
 vim.keymap.set("n", "<leader>cc", function()
-  local file = vim.fn.expand("%:p")
-  local output = vim.fn.expand("%:r") .. ".out"
-  vim.cmd("!" .. "g++ -std=c++17 -Wall " .. file .. " -o " .. output .. " && echo 'Compiled to " .. output .. "'")
+  local file = vim.api.nvim_buf_get_name(0)
+  -- local file = vim.fn.expand("%:p")
+  local filename = vim.fn.expand("%:t")
+  local output = vim.fn.expand("%:p:h") .. filename .. ".out"
+  vim.cmd("!" .. "g++ -std=c++20 -Wall " .. file .. " -o " .. output .. " && echo 'Compiled to " .. output .. "'")
 end, { desc = "Compile C++ file with g++" })
 
 vim.keymap.set("n", "<leader>r", function()
-  local file = vim.fn.expand("%:p")
-  local output = vim.fn.expand("%:r") .. ".out"
-  vim.cmd("!" .. "g++ -std=c++17 -Wall " .. file .. " -o " .. output .. " && echo 'Compiled to " .. output .. "'")
+  local file = vim.api.nvim_buf_get_name(0)
+  -- local file = vim.fn.expand("%:p")
+  local filename = vim.fn.expand("%:t")
+  local output = vim.fn.expand("%:p:h") .. filename .. ".out"
+  vim.cmd("!" .. "g++ -std=c++20 -Wall " .. file .. " -o " .. output .. " && echo 'Compiled to " .. output .. "'")
 
   vim.cmd("terminal " .. output)
 end, { desc = "Run compiled C++ program" })
@@ -17,7 +21,7 @@ vim.keymap.set("n", "<leader>cd", function()
   local output = vim.fn.expand("%:r") + ".out"
   vim.cmd(
     "!"
-      .. "g++ -std=c++17 -g -Wall "
+      .. "g++ -std=c++20 -g -Wall "
       .. file
       .. " -o "
       .. output
@@ -32,7 +36,7 @@ vim.keymap.set("n", "<leader>dd", function()
   local output = vim.fn.expand("%:r") .. ".out"
   vim.cmd(
     "!"
-      .. "g++ -std=c++17 -g -Wall "
+      .. "g++ -std=c++20 -g -Wall "
       .. file
       .. " -o "
       .. output
