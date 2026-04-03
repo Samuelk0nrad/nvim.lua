@@ -16,7 +16,7 @@ return {
         hide_during_completion = true,
         debounce = 75,
         keymap = {
-          accept = "<Tab>",
+          accept = "<C-l>",
           accept_word = "<M-Right>",
           accept_line = "<M-S-Right>",
           next = "<M-]>",
